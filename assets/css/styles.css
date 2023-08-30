@@ -476,7 +476,7 @@
     width: 32%;
     height: 19px;
     top: calc(50% - 8px);
-    left: 60%;
+    left: 100%;
 }
 
 .section-8 .inner-item-mid::after {
@@ -488,7 +488,7 @@
     width: 32%;
     height: 19px;
     top: 15%;
-    left: 60%;
+    left: 100%;
 }
 
 @media (max-width: 1199.98px) {
