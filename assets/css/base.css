@@ -18,8 +18,9 @@ body {
     font-family: var(--font);
 }
 
-body::selection {
+a::selection, div::selection, img::selection, strong::selection {
     background: #E64F8F;
+    color: #fff;
 }
 
 a {
