@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
+    <link rel="stylesheet" href="https://wowjs.uk/css/libs/animate.css" />
+    <link rel="canonical" href="https://wowjs.uk/">
+
+
 </head>
 
 <body>
@@ -100,9 +104,9 @@
 
     <div class="section-2" id="about">
         <div class="container">
-            <div class="row" >
+            <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="inner-item" >
+                    <div class="inner-item wow fadeInUp">
                         <div class="inner-image">
                             <img src="assets/images/section1.png" alt="people">
                         </div>
@@ -113,7 +117,7 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div class="inner-item">
+                    <div class="inner-item wow fadeInUp" data-wow-delay="0.1s">
                         <div class="inner-image">
                             <img src="assets/images/section1.png" alt="people">
                         </div>
@@ -124,7 +128,7 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6  col-12">
-                    <div class="inner-item">
+                    <div class="inner-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="inner-image">
                             <img src="assets/images/section1.png" alt="people">
                         </div>
@@ -147,7 +151,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
-                    <div class="inner-image">
+                    <div class="inner-image wow fadeInLeft" data-wow-duration="0.6s">
                         <img src="assets/images/section-3.png" alt="Discuss">
                     </div>
                 </div>
@@ -185,7 +189,7 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-5 cool-md-12 col-sm-12 col-12">
-                    <div class="inner-image">
+                    <div class="inner-image wow fadeInRight" data-wow-duration="0.6s">
                         <img src="assets/images/help.png" alt="Help">
                     </div>
                 </div>
@@ -365,7 +369,7 @@
             </div>
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                    <div class="inner-item">
+                    <div class="inner-item wow fadeInUp">
                         <div class="inner-head">Starter</div>
                         <div class="inner-price">
                             <div class="inner-tien">$ 14.50</div>
@@ -394,10 +398,10 @@
                             </ul>
                         </div>
                         <a href="#" class="button button-highlight">purchase now</a>
-                    </div>s
+                    </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                    <div class="inner-item inner-item-2">
+                    <div class="inner-item inner-item-2 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="inner-head">Premium</div>
                         <div class="inner-price">
                             <div class="inner-tien">$ 21.50</div>
@@ -429,7 +433,7 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                    <div class="inner-item">
+                    <div class="inner-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="inner-head">Advanced</div>
 
                         <div class="inner-price">
@@ -470,36 +474,82 @@
 
     <!-- section-8 -->
 
-    <div class="section-8">
+    <div class="section-8" id="run">
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="inner-item">
-                        <div class="inner-number">126</div>
+                        <div class="inner-number">0</div>
                         <div class="inner-dsc">Projects</div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="inner-item-mid">
-                        <div class="inner-number">63</div>
+                        <div class="inner-number">0</div>
                         <div class="inner-dsc">Happy Clients</div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="inner-item">
-                        <div class="inner-number">18</div>
+                        <div class="inner-number" id="inner-item-3">0</div>
                         <div class="inner-dsc">Awards Wins</div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="inner-item-last">
-                        <div class="inner-number">27</div>
+                        <div class="inner-number" id="item-4">0</div>
                         <div class="inner-dsc">Countries</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        const run = document.getElementById("run");
+        run.addEventListener("mouseenter", () => {
+            const project = document.querySelector(".section-8 .inner-item .inner-number");
+            let countpj = 0;
+            const dempj = setInterval(() => {
+                project.innerHTML = countpj;
+                countpj++;
+                if (countpj > 126) {
+                    clearInterval(dempj);
+                }
+            }, (1000 / 126));
+
+            const clients = document.querySelector(".section-8 .inner-item-mid .inner-number");
+            let countcl = 0;
+            const demcl = setInterval(() => {
+                clients.innerHTML = countcl;
+                countcl++;
+                if (countcl > 63) {
+                    clearInterval(demcl);
+                }
+            }, (1000 / 63));
+
+            const win = document.getElementById("inner-item-3");
+            let countwin = 0;
+            const demwin = setInterval(() => {
+                win.innerHTML = countwin;
+                countwin++;
+                if (countwin > 18) {
+                    clearInterval(demwin);
+                }
+            }, (1000 / 18));
+
+            const country = document.getElementById("item-4");
+            let countcountry = 0;
+            const demcoutry = setInterval(() => {
+                country.innerHTML = countcountry;
+                countcountry++;
+                if (countcountry > 27) {
+                    clearInterval(demcoutry);
+                }
+            }, (1000 / 27));
+        });
+
+    </script>
 
     <!-- section-8 -->
 
@@ -512,7 +562,8 @@
                 <div class="col-xl-6 col-lg-8">
                     <div class="box-head">
                         <div class="inner-title">Blog Entries</div>
-                        <div class="inner-dsc">Integer molestie aliquam gravida. Nullam nec arcu finibus, imperdiet nulla vitae, placerat nibh. Cras maximus venenatis molestie.</div>
+                        <div class="inner-dsc">Integer molestie aliquam gravida. Nullam nec arcu finibus, imperdiet
+                            nulla vitae, placerat nibh. Cras maximus venenatis molestie.</div>
                     </div>
                 </div>
             </div>
@@ -521,7 +572,8 @@
                     <div class="inner-item">
                         <img src="assets/images/blog-item-01.png" alt="">
                         <a href="#" class="inner-title">Vivamus ac vehicula dui</a>
-                        <div class="inner-dsc">Cras aliquet ligula dui, vitae fermentum velit tincidunt id. Praesent eu finibus nunc. Nulla in sagittis eros. Aliquam egestas augue.</div>
+                        <div class="inner-dsc">Cras aliquet ligula dui, vitae fermentum velit tincidunt id. Praesent eu
+                            finibus nunc. Nulla in sagittis eros. Aliquam egestas augue.</div>
                         <a href="#" class="button button-highlight">read more</a>
                     </div>
                 </div>
@@ -529,7 +581,8 @@
                     <div class="inner-item">
                         <img src="assets/images/blog-item-02.png" alt="">
                         <a href="#" class="inner-title">Phasellus convallis augue</a>
-                        <div class="inner-dsc">Aliquam commodo ornare nisl, et scelerisque nisl dignissim ac. Vestibulum finibus urna ut velit venenatis, vel ultrices sapien mattis.</div>
+                        <div class="inner-dsc">Aliquam commodo ornare nisl, et scelerisque nisl dignissim ac. Vestibulum
+                            finibus urna ut velit venenatis, vel ultrices sapien mattis.</div>
                         <a href="#" class="button button-highlight">read more</a>
                     </div>
                 </div>
@@ -537,7 +590,8 @@
                     <div class="inner-item">
                         <img src="assets/images/blog-item-03.png" alt="">
                         <a href="#" class="inner-title">Nam gravida purus non</a>
-                        <div class="inner-dsc">Maecenas eu erat vitae dui convallis consequat vel gravida nulla. Vestibulum finibus euismod odio, ut tempus enim varius eu.</div>
+                        <div class="inner-dsc">Maecenas eu erat vitae dui convallis consequat vel gravida nulla.
+                            Vestibulum finibus euismod odio, ut tempus enim varius eu.</div>
                         <a href="#" class="button button-highlight">read more</a>
                     </div>
                 </div>
@@ -555,7 +609,8 @@
                 <div class="col-xl-6 col-lg-8">
                     <div class="box-head">
                         <div class="inner-title">Talk To Us</div>
-                        <div class="inner-dsc">Maecenas pellentesque ante faucibus lectus vulputate sollicitudin. Cras feugiat hendrerit semper.</div>
+                        <div class="inner-dsc">Maecenas pellentesque ante faucibus lectus vulputate sollicitudin. Cras
+                            feugiat hendrerit semper.</div>
                     </div>
                 </div>
                 <div class="row">
@@ -563,7 +618,8 @@
                         <div class="inner-title">Keep in touch</div>
                         <div class="inner-dsc-1">110-220 Quisque diam odio, maximus ac consectetur eu, 10260
                             auctor non lorem</div>
-                        <div class="inner-dsc-2">You are NOT allowed to re-distribute Softy Pinko template on any template collection websites. Thank you.</div>
+                        <div class="inner-dsc-2">You are NOT allowed to re-distribute Softy Pinko template on any
+                            template collection websites. Thank you.</div>
                     </div>
                     <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12 inner-right">
                         <form action="#">
@@ -642,6 +698,11 @@
     </div>
 
     <!-- section-11 -->
+
+    <script src="https://wowjs.uk/dist/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 
 </body>
 
